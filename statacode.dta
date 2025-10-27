@@ -1,0 +1,19 @@
+* import data
+import delimited "/Users/aditpakala/Downloads/Econometrics/Econometrics Long Paper Final Data - Sheet1.csv", clear
+
+* generate country_id as numerical representation of countries
+encode entity, gen(country_id)
+
+* generate panel
+xtset country_id year
+
+* log of GDP
+gen ln_GDPPerCapita = log(ny_gdp_pcap_pp_kd)
+
+* rename variables
+rename completion_rate__upper_secondary SecEdCompletion
+rename se_sec_tcaq_up_zs ShareTrained
+rename oecd OECD
+
+* run regression
+xtreg SecEdCompletion ShareTrained ln_GDPPerCapita OECD
