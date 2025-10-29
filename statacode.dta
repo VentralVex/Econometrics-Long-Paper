@@ -16,4 +16,4 @@ rename se_sec_tcaq_up_zs ShareTrained
 rename oecd OECD
 
 * run regression
-xtreg SecEdCompletion ShareTrained ln_GDPPerCapita OECD i.year, fe
+xtreg SecEdCompletion ShareTrained ln_GDPPerCapita OECD
